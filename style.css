@@ -81,9 +81,11 @@ fieldset {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  margin-bottom: 32px;
   border: none;
 }
 
+fieldset .top,
 fieldset legend {
   padding: 50px 0; 
   font-family: 'Staatliches', sans-serif;
@@ -94,20 +96,41 @@ fieldset legend {
   text-align: center;
 }
 
+fieldset legend {
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 0 0 8px;
+  color: #253B51;
+  border-bottom: 1px solid #E6E6F0;
+}
+
 .name-field {
   display: flex;
   column-gap: 22px;
   margin-top: 32px;
 }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
 .input-group label {
-  display: inline-block;
-  margin-bottom: 7.93px;
   line-height: 24px;
 }
 
+.input-group label span {
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #C1BCCC;
+}
+
 .name-field .input-group input,
-.input-group input {
+.input-group input,
+.input-group select,
+.input-group textarea {
   width: 300px;
   height: 55.5px;
   padding-inline: 24px;
@@ -121,4 +144,57 @@ fieldset legend {
 
 .input-group input {
   width: 100%;
+}
+
+.input-group select {
+  margin-bottom: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+}
+
+.input-group textarea {
+  width: 100%;
+  max-width: 608px;
+  height: 167px;
+  padding: 15px 24px;
+  line-height: 20px;
+}
+
+.checkbox-group {
+  position: relative;
+}
+
+.checkbox-group input {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-group label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+.checkbox-group input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2556_23)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%23F67669'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2556_23'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.checkbox-group input:focus + label::before {
+  outline: 2px solid #000;
 }

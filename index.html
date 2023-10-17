@@ -25,7 +25,7 @@
 
       <form>
         <fieldset>
-          <legend>Informações Pessoais</legend>
+          <legend class="top">Informações Pessoais</legend>
 
           <div class="name-field">
             <div class="input-group">
@@ -44,6 +44,33 @@
               Email <span>(digite um email válido)</span>
             </label>
             <input type="email" id="data-email" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Informações do mentor</legend>
+
+          <div class="input-group">
+            <label for="select-mentor">Selecione quem foi o seu mentor</label>
+            <select id="select-mentor" required>
+              <option value="" selected disabled></option>
+              <option value="bill-gates">Bill Gates</option>
+              <option value="elon-musk">Elon Musk</option>
+              <option value="mark-zuckerberg">Mark Zuckerberg</option>
+              <option value="jeff-bezos">Jeff Bezos</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="feedback">Feedback sobre o mentor</label>
+            <textarea id="feedback"></textarea>
+          </div>
+
+          <div class="input-group checkbox-group">
+            <input type="checkbox" id="doubts-resolved">
+            <label for="doubts-resolved">
+              Todas as minhas dúvidas foram esclarecidas durante a mentoria.
+            </label>
           </div>
         </fieldset>
       </form>
